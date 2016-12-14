@@ -1,0 +1,18 @@
+* {
+	margin: 0;
+	padding: 0;
+	-box-sizing: border-box;
+	-webkit--box-sizing: border-box;
+	-moz--box-sizing: border-box;
+}
+
+/*  -- HEADER --  */
+
+.navbar {
+	margin-bottom: 0;
+}
+
+.jumbotron-rb {
+	color: #fff;
+	background-color: #483D8B;
+}
