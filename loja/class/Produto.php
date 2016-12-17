@@ -64,6 +64,10 @@ class Produto {
     function temIsbn(){
         return $this instanceof Livro;
     }
+
+    function calculaImposto() {
+        return $this->preco * 0.195;
+    }
     
     function __toString(){
         return "Produto: ".$this->nome." - Valor: ".$this->preco;
