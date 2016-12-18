@@ -10,7 +10,7 @@ $categoria->setId(1);
 $produto = new Produto("", "", "", "", $categoria);
 
 $categoriaDao = new CategoriaDao($conexao);
-$categorias = $categoriaDao->listaCategorias($conexao);
+$categorias = $categoriaDao->listaCategorias();
 
 ?>	
 

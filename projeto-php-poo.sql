@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 10-Dez-2016 às 18:32
+-- Generation Time: 18-Dez-2016 às 17:41
 -- Versão do servidor: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -36,8 +36,8 @@ CREATE TABLE `categorias` (
 --
 
 INSERT INTO `categorias` (`id`, `nome`) VALUES
-(1, 'Água'),
-(2, 'Gás');
+(1, 'Agua'),
+(2, 'Gas');
 
 -- --------------------------------------------------------
 
@@ -51,18 +51,24 @@ CREATE TABLE `produtos` (
   `descricao` text NOT NULL,
   `preco` decimal(10,2) DEFAULT NULL,
   `usado` tinyint(1) NOT NULL,
-  `categoria_id` int(11) DEFAULT NULL
+  `categoria_id` int(11) DEFAULT NULL,
+  `isbn` varchar(255) DEFAULT NULL,
+  `tipoProduto` varchar(255) DEFAULT NULL,
+  `waterMark` varchar(255) DEFAULT NULL,
+  `taxaImpressao` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Extraindo dados da tabela `produtos`
 --
 
-INSERT INTO `produtos` (`id`, `nome`, `descricao`, `preco`, `usado`, `categoria_id`) VALUES
-(1, 'Galão 20 Litros', 'Galão de 20 litros - Valor para entrega', '8.00', 0, 2),
-(2, 'Galão 10 Litros', 'Galão de 10 litros - Valor para entrega', '6.00', 0, 2),
-(3, 'Galão 20 Litros', 'Galão de 20 litros - Retirar', '5.00', 0, 2),
-(4, 'Galão 10 Litros', 'Galão de 10 litros - Retirar', '4.00', 0, 2);
+INSERT INTO `produtos` (`id`, `nome`, `descricao`, `preco`, `usado`, `categoria_id`, `isbn`, `tipoProduto`, `waterMark`, `taxaImpressao`) VALUES
+(13, 'Livro de PHP 7', 'Livro de PHP 7', '30.00', 0, 1, '876565654', 'Ebook', '12', ''),
+(14, 'Ebook PHP OOB', 'Ebook Orientacao a objetos', '25.00', 0, 1, '15487542', 'Ebook', '10', ''),
+(15, 'Boneco GitHub', 'Boneco da Lula GitHub', '145.00', 1, 1, '', 'Produto', '', ''),
+(16, 'Livro Logica', 'Livro Logica', '40.00', 0, 1, '4544787754', 'LivroFisico', '', '16'),
+(17, 'Livro de HTML5', 'Novo livro HTML 5 - Impresso', '22.00', 0, 1, '9676556', 'LivroFisico', '', '34'),
+(18, 'Ebook Git', 'Novo Ebook de Git', '25.00', 0, 1, '5577748', 'Ebook', '5', '');
 
 -- --------------------------------------------------------
 
@@ -113,12 +119,12 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT for table `categorias`
 --
 ALTER TABLE `categorias`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `produtos`
 --
 ALTER TABLE `produtos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 --
 -- AUTO_INCREMENT for table `usuarios`
 --

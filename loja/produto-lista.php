@@ -11,11 +11,19 @@ require_once("cabecalho.php");
 		<tr>
 			<td><?= $produto->getNome() ?></td>
 			<td><?= $produto->getPreco() ?></td>
-			<td><?= $produto->calculaImposto() ?></td>
+			<!--<td><?= $produto->calculaImposto() ?></td>-->
 			<td><?= substr($produto->getDescricao(), 0, 40) ?></td>
 			<td><?= $produto->getCategoria()->getNome() ?></td>
 			<td><?php if($produto->temIsbn()){
 				echo "ISBN: " . $produto->getIsbn();
+				}?>
+			</td>
+			<td><?php if($produto->temWaterMark()){
+				echo "Marca: " . $produto->getWaterMark();
+				}?>
+			</td>
+			<td><?php if($produto->temTaxaImpressao()){
+				echo "Taxa: " . $produto->getTaxaImpressao();
 				}?>
 			</td>
 			<td><a class="btn btn-sm btn-primary" href="produto-altera-formulario.php?id=<?=$produto->getId()?>">ALTERAR</a></td>
